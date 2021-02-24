@@ -13,7 +13,6 @@
 #### １、阿里云上线了活体翻拍检测应用　　
 
 ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/1.png?raw=true)　　
-
 　　可以根据客户要求进行图片的同步、异步检测任务。同时提供了API接口。　　
 
 ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/2.png?raw=true)　　
