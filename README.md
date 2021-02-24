@@ -56,9 +56,9 @@
 
 　　处理前的真假图（左真右假）如下：　　
 
- ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/7.png?raw=true)　　
+ ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/7.png?raw=true)　
  　
-　　将所有图片的特征向量堆叠成.mat 文件，并通过降维处理到可接受范围，在初期我们使用了 PCA 降维。在实验初期（数据量在真假共 338 张时），本人用自己的手机（iphone）和投射设备（挑战者笔记本）拍摄了大量的真假像，所以在初期本人数据占大部分，用各种分类器（包括 svm、knn、逻辑回归、线性判别分析四个）进行分类后发现，翻拍照片能被很好的区分，在按照 3:7 的测试训练比随机抽样 1000 次后 knn 分类器的平均正确率达到了 83.2%。具体平均正确率如下表：　　
+ 　　将所有图片的特征向量堆叠成.mat 文件，并通过降维处理到可接受范围，在初期我们使用了 PCA 降维。在实验初期（数据量在真假共 338 张时），本人用自己的手机（iphone）和投射设备（挑战者笔记本）拍摄了大量的真假像，所以在初期本人数据占大部分，用各种分类器（包括 svm、knn、逻辑回归、线性判别分析四个）进行分类后发现，翻拍照片能被很好的区分，在按照 3:7 的测试训练比随机抽样 1000 次后 knn 分类器的平均正确率达到了 83.2%。具体平均正确率如下表：　　
 
 ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/8.png?raw=true)　　
 
@@ -73,12 +73,12 @@
 　　不难发现条纹依旧很明显，所以对于后续的照片我将不进行压缩归一，而是通过切割来处理。随着新的问题的发现，我又想到那照片的翻拍呢，是不是也可以进行分块来提高正确率，我也试了一部分，结果如下（左真右假）：　　
 
  ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/11.png?raw=true)　　
- 　　
-　　可以发现，并没了那么多的条纹状的微纹理，唯一区分点就是人物轮廓边缘（比如发梢）的真的条理清晰，假的模糊不清，原因可能是在照片打印时会有数据损耗，细小边缘被压缩处理导致 LBP 特征图像模糊化，接下来对照片的翻拍传统方法突破口可能就在这，或者可以用其他特征值比如 HOG 特征，提取目标轮廓等。
+ 
+ 　　可以发现，并没了那么多的条纹状的微纹理，唯一区分点就是人物轮廓边缘（比如发梢）的真的条理清晰，假的模糊不清，原因可能是在照片打印时会有数据损耗，细小边缘被压缩处理导致 LBP 特征图像模糊化，接下来对照片的翻拍传统方法突破口可能就在这，或者可以用其他特征值比如 HOG 特征，提取目标轮廓等。
 　　对于一些模糊的照片（比如拍摄过程略有移动等），其 LBP 特征图像虽然是真实的，但也会和其他真实照片有明显区别，而更接近与一些翻拍照片，如下图：  
 
-![](https://github.com/Vodkayu/Remake-detection/blob/main/images/12.png?raw=true)
-　　
+![](https://github.com/Vodkayu/Remake-detection/blob/main/images/12.png?raw=true)　　
+
 　　虽然 LBP 特征对光照不足并不是很敏感，但是在光照不足时其特征图片还是会有所区别与正常照片：  
 　
 ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/13.png?raw=true)  
