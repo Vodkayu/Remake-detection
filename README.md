@@ -56,8 +56,8 @@
 
 　　处理前的真假图（左真右假）如下：　　
 
- ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/7.png?raw=true)　
- 　
+ ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/7.png?raw=true)　　
+ 
  　　将所有图片的特征向量堆叠成.mat 文件，并通过降维处理到可接受范围，在初期我们使用了 PCA 降维。在实验初期（数据量在真假共 338 张时），本人用自己的手机（iphone）和投射设备（挑战者笔记本）拍摄了大量的真假像，所以在初期本人数据占大部分，用各种分类器（包括 svm、knn、逻辑回归、线性判别分析四个）进行分类后发现，翻拍照片能被很好的区分，在按照 3:7 的测试训练比随机抽样 1000 次后 knn 分类器的平均正确率达到了 83.2%。具体平均正确率如下表：　　
 
 ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/8.png?raw=true)　　
@@ -69,7 +69,7 @@
 　　那就得反思是不是因为压缩以后太微小的特征不能保留了呢，这种情况在翻拍 mac 屏幕时很明显，对于 mac 这种屏幕高级的，纹理就更加不明显了，所以我做了直接跑原图的实验，结果如下(左真右假)：　　
 
 ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/10.png?raw=true)　　
-　　
+
 　　不难发现条纹依旧很明显，所以对于后续的照片我将不进行压缩归一，而是通过切割来处理。随着新的问题的发现，我又想到那照片的翻拍呢，是不是也可以进行分块来提高正确率，我也试了一部分，结果如下（左真右假）：　　
 
  ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/11.png?raw=true)　　
@@ -79,8 +79,8 @@
 
 ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/12.png?raw=true)　　
 
-　　虽然 LBP 特征对光照不足并不是很敏感，但是在光照不足时其特征图片还是会有所区别与正常照片：  
-　
+　　虽然 LBP 特征对光照不足并不是很敏感，但是在光照不足时其特征图片还是会有所区别与正常照片：　　
+
 ![](https://github.com/Vodkayu/Remake-detection/blob/main/images/13.png?raw=true)  
 
 ### 五、 课题创新性  
